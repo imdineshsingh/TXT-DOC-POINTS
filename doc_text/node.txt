@@ -1,0 +1,7 @@
+run --> node app.js
+
+init npm==> npm init    //will create package.json 
+install nodemon==> npm install nodemon --save-dev
+ 		npm install nodemon -g      // will install globally in machine to be used in any project
+
+install express ==> npm install --save express

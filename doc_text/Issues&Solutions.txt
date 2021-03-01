@@ -1,0 +1,17 @@
+Recyclerview... issue
+-click one item bookmark affect another bookmark or multiple 
+-multiple checkbox check issue::
+
+solution:: put this line in adapter:::
+ 
+@Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+
+==================
+issue: removiing item.. from recyclerview taking different postion:
+solution:: user holder.getAdapterPosition() in adapter
+
+====================

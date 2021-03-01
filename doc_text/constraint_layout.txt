@@ -1,0 +1,33 @@
+1.guideline=> vertical / horizontal lines
+<Guideline/>
+
+
+2.Dimention Ratio:
+3. Bias :: Move a view horizonatally or vertically
+4. match_parent ✘  ==> don't use
+   use match_constraint i.e. 0dp
+
+5.Barriers::: https://constraintlayout.com/basics/barriers.html
+6.Chain.. are bidirectional constrins, ares very similar to linear layout
+      >views take equal space
+          - spread,, evenly distribute
+          - spead inside...
+          - weighted
+          - packed... push everything to center 
+          
+
+7. base line  ....text bo views on same level
+
+
+
+
+==>The only difference between Barrier and Guideline is that Barrier's position is flexible and always based on the size of multiple UI elements contained within it and Guideline's position is always fixed.
+
+==> if we are using match_constraint following properties can be used...
+    >default behaviour(spread and wrap)
+    >ratio
+    >weights(in chains)
+    >min & max
+
+==> constrain set for animations in constraint layout
+		https://github.com/ibhavikmakwana/Constraint-Layout-Animations

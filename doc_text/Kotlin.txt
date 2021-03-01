@@ -1,0 +1,18 @@
+coroutines:: for background thread in android
+
+
+suspend keyword in method... they can be called from coroutines
+
+25.06.2020 work on ceasefire: projectdiscussion,projectsetup,codereview 7hrs.. findit device issue 6hrs
+
+
+
+
+?  may be null  will not crash if null. safey check
+ vs
+ !!.  never null if null then will crash
+
+companion object  
+//java ka static
+
+extension function

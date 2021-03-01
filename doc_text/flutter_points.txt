@@ -1,0 +1,251 @@
+
+session :45  done.
+session : 52 done
+session : 55 done
+
+Section 4 Started.
+SECTION 6 STARTED
+
+Session 177 Completed
+
+
+Session 276 completed
+
+
+
+https://flutter.dev/docs/get-started/flutter-for/android-devs
+
+StatelessWidgets are useful when the part of the user interface you are describing does not depend on anything other than the configuration information in the object.
+For example, in Android, this is similar to placing an ImageView with your logo. The logo is not going to change during runtime, so use a StatelessWidget in Flutter.
+
+If you want to dynamically change the UI based on data received after making an HTTP call or user interaction then you have to work with StatefulWidget and tell the Flutter framework that the widget’s State has been updated so it can update that widget.
+
+
+
+//Dart 
+fun main() is the entry point of any dart application
+
+//named argument
+Text(style:TextStyle());
+
+//container Widget
+to place anoter widget and we can give width ,,margin,padding to its child widget
+
+
+//Constructors in Dart
+
+each constructor creates a new instance of the class
+so we also can create a constructor in dart like below without creating new instance of the class but with diffrent configurations
+
+class Person{
+  String name='Dart';
+  int age=2;
+  Person();  
+  Person.veryOld(this.name){  //way to define a constructor without creating new instance of the class
+    age=40;
+  }
+}
+
+fun main(){
+  var person2= Person.veryOld('Dinesh');
+  print('person Object: ${person2.name}');
+}
+
+
+//Returning list of widgets
+//Spread Operator (...)
+
+//mapping a list into the list of widgets
+
+//different between const and final is that final can be initialized thereafter it can not be changed.. but const neigher can be initialized nor changed..
+
+
+//getter
+
+//Dart Dev Tool
+
+//in Column/Row imp. components:::  Main Axis(Top to Bottom)  and Cross Axis(Left to Right)
+
+
+//lifting state up
+
+//ListView(children:[])  => render all items  vs   ListView.Builder() => it renders only visible items
+
+
+//widget.methodName             //93
+
+//themeing
+//primarySwatch= Colors.blue;      ==> primarySwatch will generate different shades of color automatically
+//font images..
+//sizedBox widget for spacing
+
+//fractionaly sized box
+
+//flexible widget  //104
+//expanded                ===> Flexible (fit: FlexFit.tight) = Expanded()
+
+
+//FittedBox widget  
+
+//listTile   //105  && 107  used to show list item with predefined configurations
+
+//Future classes in dart ... data that needs to be returned in future
+
+//Responsive and Adaptive.
+
+//height: MediaQuery.of(context).size.height * 0.6
+
+//LayoutBuilder 
+//constraint    ==>how a widget renderd on screen.. it refers to height and width
+
+//Orientaion and others 122,123,124, 125,126
+
+//Platform.isIOs Platform.isAndroid
+
+//SafeArea widget
+
+//IOS widgets  cupertino
+
+//when MediaQuery is executed @build method gets called automatically 
+SECTION 5:: RE CHECK
+
+//const widgets and constructors  //141
+
+
+//Mixins  // with keyword    ==> 147 
+
+//widget lifecycle
+ //app lifecycle
+//widgetsBindingObserver
+//inherited widget                   ==> InheritedWidget is just a simple widget that does nothing but holding data
+//key in flutter    ==> is used when listView having stateful children
+
+enum class
+
+//156
+
+any page which contains Scaffold is considers as screen since it adds entire configuration for page like appBar, bottom nav and all
+
+//GestureDetector  // inkWell   ==> inkwell is a gesture detector that also fires ripple effect
+//Navigator      //Navigatiing between screens
+//push .. pop
+
+//Named Routes
+
+//enums
+
+//onTap: choose,  vs onTap: choose(),
+
+//ClipRRect ==> The ClipRRect widget is used to clip your child using a round import ,,i.e like if you want the image corner to be round wrap image inside ClipRect.
+
+//Mapping a list... listName.map((item)=>Text(item.text)).toList();
+
+//> if we are using only ListView or GridView then we need to map the arraylist in the "childeren" property
+
+//if we are using ListView.Builder or GridView.Builder then we need to return the ListItem widget in the "itemBuilder" property.. and also add itemCount property
+
+//Stack widget ==> used for arrageing widgets top of each other  //like FragmeLaout in andorid
+
+//Positioned Widget  ==> A widget that controls where a child of a Stack is positioned.
+
+//sizedBox widget for spacing between two widgets
+
+Properties for routes in MaterialApp widget
+
+//routes property
+//onGenerateRoute property    
+//onUnknownRoute property      ==> like used to show error pages
+
+//Divider widget
+//Default Tab Controller
+
+// Navigator.of(context).pushReplacementNamed(FiltersScreen.routeName);   ==> stack of pages not created   ==> pushReplacement() replaces the current screen in the stack
+
+//Navigator.of(ctx).pushNamed(MealDetailScreen.routeName, arguments: id).then((result) =>{
+      print(result)
+    });
+
+// push(ScreenA).then(fn)       ==> The function fn exceutes as soon as the new screen i. e. "ScreenA" popped
+
+
+ ==> "then" is useed to get result back from the the page "MealDetailScreen"  (here)  when it gets poped
+
+Question:: How can you retrieve the data passed back via Navigator.of(context).pop('some data')?
+Anser: You can retrieve it as an argument to the function you use in "then(fn)" after "push() / pushNamed()" etc......
+
+
+==>   ProductItem(this.id, this.title, this.imageUrl);  //Positional Argument
+==>   ProductItem({this.id, this.title, this.imageUrl}); //Named Argument
+
+//State Management:: it is all about managing data and the Ui that reflects that data
+
+state => data which affects the UI(and which might change over time
+
+//Provider
+//spread operator [ ... (three dot)] is like "addAll()" in lists
+
+//mixins
+
+====== ProvidingData=>
+
+1. ChangeNotifyProvider(
+	create: (ctx) => products[i],
+    child:ProductItem()
+	)
+
+2. ChangeNotifyProvider.value(
+    value: products[i],
+    child:ProductItem()
+)
+
+//Listening data==
+
+final product = Provider.of<Product>(context);
+
+Consumer<Product>(
+  builder: (ctx,product,child) =>IconButton(),
+
+)
+
+
+//Chip Widget
+//Spacer widget
+
+//Dismissible widget  //=> dismiss List item
+
+//Text('Hi',softwrap: true)  ==> wrap into new line if there is no space
+
+//Global Key  ==> // access form widget from outside
+
+//TextFormField(
+validator: (value){  
+   return null;
+},)
+
+in validator ==> returning null means input is correct and there is no error .. returb text (return 'error occurred')  means error hai
+
+//Future   //then   ==> it does not block the execution of code. instead it retrun the then when the data is available
+//catch Error
+
+async... await
+
+http://api.sponsee.sg/api/
+
+returnIntent.extras.get("result")
+
+//OptimisticUpdaing => In an optimistic update the UI behaves as though a change was successfully completed before receiving confirmation from the server that it actually was - it is being optimistic that it will eventually get the confirmation rather than an error. This allows for a more responsive user experience.
+
+//Future.delayed()
+
+
+//FutureBuilder  
+
+// ?? (double question mark)  ==> favouriteData==null?false : favouriteData[prodId] ?? false    ==> if favouriteData[prodId] is null then will assign false
+
+
+//AnimatedBuilder
+
+//AnimatedController
+//FadeTransition
+
+// i have a confusion that previously we were providing the signature bitmap image in "upload" signature api in form data... this this time i only have 
